@@ -1,8 +1,7 @@
 const btnReset = document.getElementById("reset");
 const btnSubmit = document.getElementById("submit");
 let total = document.getElementById("total");
-let inputOdd = document.getElementById("odd");
-let inputEven = document.getElementById("even");
+
 let point = document.getElementById("point");
 
 // input top element
@@ -29,12 +28,207 @@ let inputSide7 = document.getElementById("side7");
 let inputSide8 = document.getElementById("side8");
 let inputSide9 = document.getElementById("side9");
 
+// input odd element
+let inputOdd = document.getElementById("odd");
+
+// input even element
+let inputEven = document.getElementById("even");
+
 btnSubmit.addEventListener("click", function () {
-  console.log(total.value);
-  console.log(point.innerHTML);
+  let input = document.querySelectorAll(".box");
+
+  let sum = 0;
+
+  for (let i = 0; i < input.length; i++) {
+    sum += +input[i].value;
+  }
+  total.value = sum;
+});
+
+btnReset.addEventListener("click", function () {
+  let input = document.querySelectorAll(".boxes");
+  for (let i = 0; i < input.length; i++) {
+    input[i].value = "";
+  }
 });
 
 btnReset.addEventListener("click", function () {
   console.log(total.value);
   console.log(point.innerHTML);
+});
+
+inputTop0.addEventListener("input", function (evt) {
+  let input = document.querySelectorAll(".top0");
+
+  for (let i = 0; i < input.length; i++) {
+    input[i].value = inputTop0.value;
+  }
+});
+
+inputTop1.addEventListener("input", function (evt) {
+  let input = document.querySelectorAll(".top1");
+
+  for (let i = 0; i < input.length; i++) {
+    input[i].value = inputTop1.value;
+  }
+});
+
+inputTop2.addEventListener("input", function (evt) {
+  let input = document.querySelectorAll(".top2");
+
+  for (let i = 0; i < input.length; i++) {
+    input[i].value = inputTop2.value;
+  }
+});
+
+inputTop3.addEventListener("input", function (evt) {
+  let input = document.querySelectorAll(".top3");
+
+  for (let i = 0; i < input.length; i++) {
+    input[i].value = inputTop3.value;
+  }
+});
+
+inputTop4.addEventListener("input", function (evt) {
+  let input = document.querySelectorAll(".top4");
+
+  for (let i = 0; i < input.length; i++) {
+    input[i].value = inputTop4.value;
+  }
+});
+
+inputTop5.addEventListener("input", function (evt) {
+  let input = document.querySelectorAll(".top5");
+
+  for (let i = 0; i < input.length; i++) {
+    input[i].value = inputTop5.value;
+  }
+});
+
+inputTop6.addEventListener("input", function (evt) {
+  let input = document.querySelectorAll(".top6");
+
+  for (let i = 0; i < input.length; i++) {
+    input[i].value = inputTop6.value;
+  }
+});
+
+inputTop7.addEventListener("input", function (evt) {
+  let input = document.querySelectorAll(".top7");
+
+  for (let i = 0; i < input.length; i++) {
+    input[i].value = inputTop7.value;
+  }
+});
+
+inputTop8.addEventListener("input", function (evt) {
+  let input = document.querySelectorAll(".top8");
+
+  for (let i = 0; i < input.length; i++) {
+    input[i].value = inputTop8.value;
+  }
+});
+
+inputTop9.addEventListener("input", function (evt) {
+  let input = document.querySelectorAll(".top9");
+
+  for (let i = 0; i < input.length; i++) {
+    input[i].value = inputTop9.value;
+  }
+});
+
+inputSide0.addEventListener("input", function (evt) {
+  let input = document.querySelectorAll(".side0");
+
+  for (let i = 0; i < input.length; i++) {
+    input[i].value = inputSide0.value;
+  }
+});
+
+inputSide1.addEventListener("input", function (evt) {
+  let input = document.querySelectorAll(".side1");
+
+  for (let i = 0; i < input.length; i++) {
+    input[i].value = inputSide1.value;
+  }
+});
+
+inputSide2.addEventListener("input", function (evt) {
+  let input = document.querySelectorAll(".side2");
+
+  for (let i = 0; i < input.length; i++) {
+    input[i].value = inputSide2.value;
+  }
+});
+
+inputSide3.addEventListener("input", function (evt) {
+  let input = document.querySelectorAll(".side3");
+
+  for (let i = 0; i < input.length; i++) {
+    input[i].value = inputSide3.value;
+  }
+});
+
+inputSide4.addEventListener("input", function (evt) {
+  let input = document.querySelectorAll(".side4");
+
+  for (let i = 0; i < input.length; i++) {
+    input[i].value = inputSide4.value;
+  }
+});
+
+inputSide5.addEventListener("input", function (evt) {
+  let input = document.querySelectorAll(".side5");
+
+  for (let i = 0; i < input.length; i++) {
+    input[i].value = inputSide5.value;
+  }
+});
+
+inputSide6.addEventListener("input", function (evt) {
+  let input = document.querySelectorAll(".side6");
+
+  for (let i = 0; i < input.length; i++) {
+    input[i].value = inputSide6.value;
+  }
+});
+
+inputSide7.addEventListener("input", function (evt) {
+  let input = document.querySelectorAll(".side7");
+
+  for (let i = 0; i < input.length; i++) {
+    input[i].value = inputSide7.value;
+  }
+});
+
+inputSide8.addEventListener("input", function (evt) {
+  let input = document.querySelectorAll(".side8");
+
+  for (let i = 0; i < input.length; i++) {
+    input[i].value = inputSide8.value;
+  }
+});
+
+inputSide9.addEventListener("input", function (evt) {
+  let input = document.querySelectorAll(".side9");
+
+  for (let i = 0; i < input.length; i++) {
+    input[i].value = inputSide9.value;
+  }
+});
+
+inputOdd.addEventListener("input", function (evt) {
+  let input = document.querySelectorAll(".odd");
+
+  for (let i = 0; i < input.length; i++) {
+    input[i].value = inputOdd.value;
+  }
+});
+
+inputEven.addEventListener("input", function (evt) {
+  let input = document.querySelectorAll(".even");
+
+  for (let i = 0; i < input.length; i++) {
+    input[i].value = inputEven.value;
+  }
 });
