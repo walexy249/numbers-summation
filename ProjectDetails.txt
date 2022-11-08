@@ -1,0 +1,23 @@
+Web Page
+
+Important - the page should be Mobile First page
+You need to design it in such a fashion that it is adjusted in the Potrait orientation 
+
+Form Validation
+a) Input (Numbers Only)
+b) Total (Read Only)
+c) Total should br less than equal to Points ( Total <= Points)
+d) Reset Button should clear all the points selected in numbers
+e) Submit button to submit form with input choice array (say form.php)
+
+
+Options
+a) Pic1 (When a point is placed in the input field marked in circle it should populate all the number in vertical sections with that point and update Total)
+b) Pic2 (When a point is placed in the input field marked in circle it should populate all the number in horizontal sections with that point and update Total)
+c) Pic3 (When a point is entered in both horizontal and vertical it should add the points (Circle 1), Circle 2 is where the user can eneter points of his wish and finally update Total)
+d) Pic4 (Odd / Even) it should populate all the respective numbers and update Total
+c) Pic5 The input fields in circle are just helpers for quick selection
+
+
+Kindly let me know the Time Required and Quote for the Same.
+
