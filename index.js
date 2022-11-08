@@ -42,7 +42,11 @@ btnSubmit.addEventListener("click", function () {
   for (let i = 0; i < input.length; i++) {
     sum += +input[i].value;
   }
-  total.value = sum;
+  if (sum <= 1000) {
+    total.value = sum;
+  } else {
+    total.value = 1000;
+  }
 });
 
 btnReset.addEventListener("click", function () {

@@ -1,0 +1,21 @@
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+input {
+  width: 2rem;
+  height: 1.5rem;
+}
+
+#total {
+  width: 2.7rem;
+  height: 1.5rem;
+}
