@@ -1,26 +1,3 @@
-// (function () {
-//   // …
-
-//   // Select your input element.
-//   var number = document.querySelectorAll(".boxes");
-
-//   // Listen for input event on numInput.
-
-//   for (let i = 0; i < number.length; i++) {
-//     number[i].onkeydown = function (e) {
-//       if (
-//         !(
-//           (e.keyCode > 95 && e.keyCode < 106) ||
-//           (e.keyCode > 47 && e.keyCode < 58) ||
-//           e.keyCode == 8
-//         )
-//       ) {
-//         return false;
-//       }
-//     };
-//   }
-// })();
-
 const btnReset = document.getElementById("reset");
 const btnSubmit = document.getElementById("submit");
 let total = document.getElementById("total");
@@ -57,7 +34,7 @@ let inputOdd = document.getElementById("odd");
 // input even element
 let inputEven = document.getElementById("even");
 
-btnSubmit.addEventListener("click", function () {
+function computeTotal() {
   let input = document.querySelectorAll(".box");
 
   let sum = 0;
@@ -70,6 +47,10 @@ btnSubmit.addEventListener("click", function () {
   } else {
     total.value = 1000;
   }
+}
+
+btnSubmit.addEventListener("click", function () {
+  computeTotal();
 });
 
 btnReset.addEventListener("click", function () {
@@ -259,3 +240,8 @@ inputEven.addEventListener("input", function (evt) {
     input[i].value = inputEven.value;
   }
 });
+
+const inputs = [...document.querySelectorAll(".boxes")];
+for (let i = 0; i < inputs.length; i++) {
+  inputs[i].addEventListener("input", computeTotal);
+}
