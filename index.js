@@ -1,3 +1,26 @@
+// (function () {
+//   // …
+
+//   // Select your input element.
+//   var number = document.querySelectorAll(".boxes");
+
+//   // Listen for input event on numInput.
+
+//   for (let i = 0; i < number.length; i++) {
+//     number[i].onkeydown = function (e) {
+//       if (
+//         !(
+//           (e.keyCode > 95 && e.keyCode < 106) ||
+//           (e.keyCode > 47 && e.keyCode < 58) ||
+//           e.keyCode == 8
+//         )
+//       ) {
+//         return false;
+//       }
+//     };
+//   }
+// })();
+
 const btnReset = document.getElementById("reset");
 const btnSubmit = document.getElementById("submit");
 let total = document.getElementById("total");
