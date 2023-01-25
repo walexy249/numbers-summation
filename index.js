@@ -28,6 +28,12 @@ let inputSide7 = document.getElementById("side7");
 let inputSide8 = document.getElementById("side8");
 let inputSide9 = document.getElementById("side9");
 
+// img element
+let img10 = document.getElementById("img-10");
+let img15 = document.getElementById("img-15");
+let img20 = document.getElementById("img-20");
+let img50 = document.getElementById("img-50");
+
 let topArr = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
 let sideArr = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
 
@@ -61,11 +67,33 @@ btnReset.addEventListener("click", function () {
   for (let i = 0; i < input.length; i++) {
     input[i].value = "";
   }
+
+  img10.src = "./normal-10.png";
+  img15.src = "./normal-15.png";
+  img20.src = "./normal-20.png";
+  img50.src = "./normal-10.png";
 });
 
 btnReset.addEventListener("click", function () {
   console.log(total.value);
   console.log(point.innerHTML);
+});
+
+img10.addEventListener("click", function () {
+  total.value = +total.value + 10;
+  img10.src = "./whenSelected-10.png";
+});
+img15.addEventListener("click", function () {
+  total.value = +total.value + 15;
+  img15.src = "./whenSelected-15.png";
+});
+img20.addEventListener("click", function () {
+  total.value = +total.value + 20;
+  img20.src = "./whenSelected-20.png";
+});
+img50.addEventListener("click", function () {
+  total.value = +total.value + 50;
+  img50.src = "./whenSelected-50.png";
 });
 
 inputTop0.addEventListener("input", function (evt) {
@@ -236,11 +264,38 @@ inputSide0.addEventListener("input", function (evt) {
     if (input[i].value === "") {
       input[i].value = inputSide0.value;
     } else {
+      // console.log(typeof +inputOdd.value, inputEven.value);
+      let odd = +inputOdd.value;
+      let even = +inputEven.value;
       if (topArr[i] === 0) {
-        input[i].value = inputSide0.value;
+        if (odd !== 0) {
+          console.log("hi");
+          if (inputSide0.value === "") {
+            if (i % 2 === 0) {
+              input[i].value = inputSide0.value;
+            } else {
+              input[i].value = odd;
+            }
+          } else {
+            input[i].value = odd + +input[i].value;
+          }
+        }
+        // input[i].value = inputSide0.value;
       } else {
         input[i].value = topArr[i] + +inputSide0.value;
       }
+
+      // if (even !== 0) {
+      //   if (inputSide0.value === "") {
+      //     if (i % 2 !== 0) {
+      //       input[i].value = input[i].value + +inputSide0.value;
+      //     } else {
+      //       input[i].value = even + +input[i].value;
+      //     }
+      //   } else {
+      //     input[i].value = even + +input[i].value;
+      //   }
+      // }
     }
   }
 });
@@ -396,7 +451,7 @@ inputOdd.addEventListener("input", function (evt) {
     let [sideIndex, topIndex] = id.split("");
     sideIndex = parseInt(sideIndex);
     topIndex = parseInt(topIndex);
-    console.log(sideIndex, topIndex);
+    // console.log(sideIndex, topIndex);
     if (input[i].value === "") {
       input[i].value = inputOdd.value;
     } else {

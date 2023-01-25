@@ -19,3 +19,11 @@ input {
   width: 2.7rem;
   height: 1.5rem;
 }
+.img-container {
+  display: flex;
+  justify-content: center;
+}
+
+img {
+  cursor: pointer;
+}
