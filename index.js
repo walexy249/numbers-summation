@@ -3,6 +3,7 @@ const btnSubmit = document.getElementById("submit");
 let total = document.getElementById("total");
 
 let point = document.getElementById("point");
+let helperNumber = 0;
 
 // input top element
 let inputTop0 = document.getElementById("top0");
@@ -33,15 +34,6 @@ let img10 = document.getElementById("img-10");
 let img15 = document.getElementById("img-15");
 let img20 = document.getElementById("img-20");
 let img50 = document.getElementById("img-50");
-let img10Selected = false;
-let img15Selected = false;
-let img20Selected = false;
-let img50Selected = false;
-
-let img10ClickTimes = 0;
-let img15ClickTimes = 0;
-let img20ClickTimes = 0;
-let img50ClickTimes = 0;
 
 let topArr = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
 let sideArr = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
@@ -60,20 +52,9 @@ function computeTotal() {
   for (let i = 0; i < input.length; i++) {
     sum += +input[i].value;
   }
-  total.value = sum;
-  if (img10Selected) {
-    total.value = +total.value + 10 * img10ClickTimes;
-  }
-  if (img15Selected) {
-    total.value = +total.value + 15 * img15ClickTimes;
-  }
-  if (img20Selected) {
-    total.value = +total.value + 20 * img20ClickTimes;
-  }
-  if (img50Selected) {
-    total.value = +total.value + 50 * img50ClickTimes;
-  }
-  if (total.value > 1000) {
+  if (sum <= 1000) {
+    total.value = sum;
+  } else {
     total.value = 1000;
   }
 }
@@ -92,15 +73,6 @@ btnReset.addEventListener("click", function () {
   img15.src = "./normal-15.png";
   img20.src = "./normal-20.png";
   img50.src = "./normal-10.png";
-
-  img10ClickTimes = 0;
-  img10Selected = false;
-  img15ClickTimes = 0;
-  img15Selected = false;
-  img20ClickTimes = 0;
-  img20Selected = false;
-  img50ClickTimes = 0;
-  img50Selected = false;
 });
 
 btnReset.addEventListener("click", function () {
@@ -109,29 +81,44 @@ btnReset.addEventListener("click", function () {
 });
 
 img10.addEventListener("click", function () {
-  total.value = +total.value + 10;
+  helperNumber = 10;
+  console.log(helperNumber);
   img10.src = "./whenSelected-10.png";
-  img10Selected = true;
-  img10ClickTimes += 1;
 });
 img15.addEventListener("click", function () {
-  total.value = +total.value + 15;
+  helperNumber = 15;
   img15.src = "./whenSelected-15.png";
-  img15Selected = true;
-  img15ClickTimes += 1;
 });
 img20.addEventListener("click", function () {
-  total.value = +total.value + 20;
+  // total.value = +total.value + 20;
+  helperNumber = 20;
+
   img20.src = "./whenSelected-20.png";
-  img20Selected = true;
-  img20ClickTimes += 1;
 });
 img50.addEventListener("click", function () {
-  total.value = +total.value + 50;
+  helperNumber = 50;
   img50.src = "./whenSelected-50.png";
-  img50Selected = true;
-  img50ClickTimes += 1;
 });
+
+const my_inputs = [...document.querySelectorAll(".boxes")];
+
+function addNumberImg(el) {
+  if (helperNumber > 0) {
+    console.log("clicked", el.srcElement.id);
+    console.log(el);
+    document.getElementById(el.srcElement.id).value = helperNumber;
+
+    img10.src = "./normal-10.png";
+    img15.src = "./normal-15.png";
+    img20.src = "./normal-20.png";
+    img50.src = "./normal-50.png";
+    helperNumber = 0;
+  }
+}
+
+for (let i = 0; i < my_inputs.length; i++) {
+  my_inputs[i].addEventListener("click", addNumberImg);
+}
 
 inputTop0.addEventListener("input", function (evt) {
   let input = document.querySelectorAll(".top0");
@@ -516,6 +503,7 @@ inputEven.addEventListener("input", function (evt) {
 });
 
 const inputs = [...document.querySelectorAll(".boxes")];
+
 for (let i = 0; i < inputs.length; i++) {
   inputs[i].addEventListener("input", computeTotal);
 }
